@@ -1,6 +1,6 @@
 ![Cover](https://raw.githubusercontent.com/formsend/chatbot/master/.github/hero.png)
 
-> JSON configurable Chatbot Framework for NodeJS
+> Open Source Chatbot Framework for NodeJS, configurable with JSON.
 
 
 #### This package is in active development by the team at [Formsend](https://formsend.org). It will form the backbone of an upcoming feature. API will probably change in the future. Pull Requests and Feature Requests are welcomed.
@@ -42,8 +42,9 @@ const ChatBot = require('@formsend/chatbot');
 	* @param context [string] unique id for that context
 	* @param message [string] ongoing conversation message
 	* @param answers [object] array of possible answers
+	* @param configuaration [object] array of possible answers
 	*/
-	var answer = await ChatBot('uniqueId', 'Cookie', answers)
+	var answer = await ChatBot('uniqueId', 'Cookie', answers, configuaration)
 
 	console.log( answer ) // Do you want a cookie? 
 
@@ -56,6 +57,25 @@ const ChatBot = require('@formsend/chatbot');
 const express = require('express')
 const app = express()
 const port = 3000
+
+const features = [
+
+		{
+			name: "Cookie",
+			confirmation: "Do you want a cookie?",
+			triggers: [ "cookie" ],
+			fields: [
+				{
+					label: "What flavor?",
+					name: "flavor"
+				},
+			],
+			action: async (fields) => {
+				console.log( fields.flavor )
+				return `🍪`
+			}
+		},
+]
 
 app.get('/', async (req, res) => {
 	req.query.message = req.query.message || 'Cookie'
