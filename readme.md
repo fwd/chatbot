@@ -24,17 +24,11 @@ const ChatBot = require('@formsend/chatbot');
 		{
 			name: "Cookie",
 			confirmation: "You want a cookie?",
-			triggers: [ "hello", "cookie" ],
+			triggers: [ "cookie" ],
 			fields: [
 				{
 					label: "What flavor?",
-					name: "flavor",
-					validate: (value) => {
-						if (value == 'chocolate' || value == 'chocolate') {
-							return true
-						}
-						return "I don't have any of those"
-					}
+					name: "flavor"
 				},
 			],
 			action: async (fields) => {
@@ -50,7 +44,7 @@ const ChatBot = require('@formsend/chatbot');
 	* @param message [string]
 	* @param answers [object]
 	*/
-	var answer = await ChatBot('contextId', 'Hello', answers)
+	var answer = await ChatBot('contextId', 'Cookie', answers)
 
 	console.log( answer )
 
@@ -60,7 +54,7 @@ const ChatBot = require('@formsend/chatbot');
 	const port = 3000
 
 	app.get('/', async (req, res) => {
-		req.query.message = req.query.message || 'Hello'
+		req.query.message = req.query.message || 'Cookie'
 		res.send( await ChatBot('contextId', req.query.message, answers) )
 	})
 
