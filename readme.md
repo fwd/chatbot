@@ -14,11 +14,11 @@ npm i formsend/chatbot
 
 ```js
 
-const ChatBot = require('@formsend/chatbot');
+const ChatBot = require('@formsend/chatbot')
 
-;(() => {
+;(async () => {
 
-	var features = [
+	var answers = [
 
 		{
 			name: "Cookie",
@@ -43,9 +43,12 @@ const ChatBot = require('@formsend/chatbot');
 	* @param answers [object] array of possible answers
 	* @param configuaration [object] array of possible answers
 	*/
-	var answer = await ChatBot('uniqueId', 'Cookie', answers, configuaration)
 
-	console.log( answer ) // Do you want a cookie? 
+	console.log( await ChatBot('uniqueId', 'Cookie', answers) )
+
+	console.log( await ChatBot('uniqueId', 'Yes', answers) )
+
+	console.log( await ChatBot('uniqueId', 'Chocolate', answers) )
 
 })()
 
@@ -53,11 +56,12 @@ const ChatBot = require('@formsend/chatbot');
 
 ## Express Example
 ```javascript
+const ChatBot = require('@formsend/chatbot')
 const express = require('express')
 const app = express()
 const port = 3000
 
-var features = [
+var answers = [
 	{
 		name: "Cookie",
 		confirmation: "Do you want a cookie?",
@@ -76,7 +80,7 @@ var features = [
 ]
 
 app.get('/', async (req, res) => {
-	req.query.message = req.query.message || 'Cookie'
+	if (!req.query.message) return res.send("Message is required.")
 	res.send( await ChatBot('contextId', req.query.message, answers) )
 })
 
@@ -87,10 +91,10 @@ app.listen(port, () => {
 
 ### Terminal Chatbot 😎
 ```javascript
+const ChatBot = require('@formsend/chatbot')
+const readline = require('readline');
 
-var readline = require('readline');
-
-var rl = readline.createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -107,7 +111,7 @@ var features = [
 			},
 		],
 		action: async (fields) => {
-			console.log( fields.flavor )
+			console.log( fields )
 			return `🍪`
 		}
 	},
