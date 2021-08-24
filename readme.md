@@ -9,7 +9,6 @@
 ```sh
 npm i formsend/chatbot
 ``` 
-Note: This package is NOT on NPM, yet. When you 'npm i formsend/chatbot' you're downloading it directly from this Github. Heads up. We will add it to NPM in the coming weeks.
 
 ## Simple Example
 
