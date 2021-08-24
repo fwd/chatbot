@@ -1,4 +1,4 @@
-![Cover](https://raw.githubusercontent.com/formsend/chatbot/master/.github/cover.png)
+![Cover](https://raw.githubusercontent.com/formsend/chatbot/master/.github/hero.png)
 
 > JSON configurable Chatbot Framework for NodeJS
 
