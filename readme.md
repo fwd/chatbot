@@ -57,7 +57,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const features = [
+var features = [
 	{
 		name: "Cookie",
 		confirmation: "Do you want a cookie?",
@@ -83,6 +83,46 @@ app.get('/', async (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+```
+
+### Terminal based Chatbot 🔥
+```javascript
+
+var readline = require('readline');
+
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+var features = [
+	{
+		name: "Cookie",
+		confirmation: "Do you want a cookie?",
+		triggers: [ "cookie" ],
+		fields: [
+			{
+				label: "What flavor?",
+				name: "flavor"
+			},
+		],
+		action: async (fields) => {
+			console.log( fields.flavor )
+			return `🍪`
+		}
+	},
+]
+
+var recursiveAsyncReadLine = function () {
+  rl.question('> ', async (answer) => {
+    if (answer == 'exit') return rl.close()
+    if (answer == 'clear') return console.clear()
+    console.log( await ChatBot('jenkins', answer, features) )
+    recursiveAsyncReadLine();
+  });
+};
+
+recursiveAsyncReadLine();
 ```
 
 ## 👤 Author
