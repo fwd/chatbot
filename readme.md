@@ -3,7 +3,7 @@
 > JSON configurable Chatbot Framework for NodeJS
 
 
-#### This package is in active development by the team at [Formsend](https://formsend.org). It will form the backbone of an upcoming feature. API will probably change in the future. Pull Requests and Feature Requests are welcomed. It will stay Open Source indefinitely.
+#### This package is in active development by the team at [Formsend](https://formsend.org). It will form the backbone of an upcoming feature. API will probably change in the future. Pull Requests and Feature Requests are welcomed.
 
 ## Install
 
