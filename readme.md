@@ -18,24 +18,24 @@ const ChatBot = require('@formsend/chatbot');
 
 ;(() => {
 
-var features = [
+	var features = [
 
-	{
-		name: "Cookie",
-		confirmation: "Do you want a cookie?",
-		triggers: [ "cookie" ],
-		fields: [
-			{
-				label: "What flavor?",
-				name: "flavor"
-			},
-		],
-		action: async (fields) => {
-			return `🍪`
-		}
-	},
+		{
+			name: "Cookie",
+			confirmation: "Do you want a cookie?",
+			triggers: [ "cookie" ],
+			fields: [
+				{
+					label: "What flavor?",
+					name: "flavor"
+				},
+			],
+			action: async (fields) => {
+				return `🍪`
+			}
+		},
 
-]
+	]
 
 	/**
 	* @param context [string] unique id for that context
