@@ -23,7 +23,7 @@ const ChatBot = require('@formsend/chatbot');
 
 		{
 			name: "Cookie",
-			confirmation: "You want a cookie?",
+			confirmation: "Do you want a cookie?",
 			triggers: [ "cookie" ],
 			fields: [
 				{
@@ -38,21 +38,20 @@ const ChatBot = require('@formsend/chatbot');
 
 	]
 
-	// basic example
 	/**
-	* @param context [string]
-	* @param message [string]
-	* @param answers [object]
+	* @param context [string] unique id for that context
+	* @param message [string] ongoing conversation message
+	* @param answers [object] array of possible answers
 	*/
-	var answer = await ChatBot('contextId', 'Cookie', answers)
+	var answer = await ChatBot('uniqueId', 'Cookie', answers)
 
-	console.log( answer )
+	console.log( answer ) // Do you want a cookie? 
 
 })()
 
 ```
 
-## ExpressJS Example
+## Express Example
 ```javascript
 const express = require('express')
 const app = express()
