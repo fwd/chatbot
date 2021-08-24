@@ -11,13 +11,13 @@
 npm i formsend/chatbot
 ``` 
 
-## Usage
+## Simple Example
 
 ```js
 
 const ChatBot = require('@formsend/chatbot');
 
-(() => {
+;(() => {
 
 	var features = [
 
@@ -48,22 +48,24 @@ const ChatBot = require('@formsend/chatbot');
 
 	console.log( answer )
 
-	// express example
-	const express = require('express')
-	const app = express()
-	const port = 3000
-
-	app.get('/', async (req, res) => {
-		req.query.message = req.query.message || 'Cookie'
-		res.send( await ChatBot('contextId', req.query.message, answers) )
-	})
-
-	app.listen(port, () => {
-	  console.log(`Example app listening at http://localhost:${port}`)
-	})
-
 })()
 
+```
+
+## ExpressJS Example
+```javascript
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', async (req, res) => {
+	req.query.message = req.query.message || 'Cookie'
+	res.send( await ChatBot('contextId', req.query.message, answers) )
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
 ```
 
 ## 👤 Author
