@@ -99,7 +99,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-var features = [
+var answers = [
 	{
 		name: "Cookie",
 		confirmation: "Do you want a cookie?",
@@ -121,7 +121,7 @@ var recursiveAsyncReadLine = function () {
   rl.question('> ', async (answer) => {
     if (answer == 'exit') return rl.close()
     if (answer == 'clear') return console.clear()
-    console.log( await ChatBot('jenkins', answer, features) )
+    console.log( await ChatBot('jenkins', answer, answers) )
     recursiveAsyncReadLine();
   });
 };
