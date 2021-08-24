@@ -19,24 +19,24 @@ const ChatBot = require('@formsend/chatbot');
 
 ;(() => {
 
-	var features = [
+var features = [
 
-		{
-			name: "Cookie",
-			confirmation: "Do you want a cookie?",
-			triggers: [ "cookie" ],
-			fields: [
-				{
-					label: "What flavor?",
-					name: "flavor"
-				},
-			],
-			action: async (fields) => {
-				return `🍪`
-			}
-		},
+	{
+		name: "Cookie",
+		confirmation: "Do you want a cookie?",
+		triggers: [ "cookie" ],
+		fields: [
+			{
+				label: "What flavor?",
+				name: "flavor"
+			},
+		],
+		action: async (fields) => {
+			return `🍪`
+		}
+	},
 
-	]
+]
 
 	/**
 	* @param context [string] unique id for that context
@@ -59,22 +59,21 @@ const app = express()
 const port = 3000
 
 const features = [
-
-		{
-			name: "Cookie",
-			confirmation: "Do you want a cookie?",
-			triggers: [ "cookie" ],
-			fields: [
-				{
-					label: "What flavor?",
-					name: "flavor"
-				},
-			],
-			action: async (fields) => {
-				console.log( fields.flavor )
-				return `🍪`
-			}
-		},
+	{
+		name: "Cookie",
+		confirmation: "Do you want a cookie?",
+		triggers: [ "cookie" ],
+		fields: [
+			{
+				label: "What flavor?",
+				name: "flavor"
+			},
+		],
+		action: async (fields) => {
+			console.log( fields.flavor )
+			return `🍪`
+		}
+	},
 ]
 
 app.get('/', async (req, res) => {
