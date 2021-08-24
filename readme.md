@@ -85,7 +85,7 @@ app.listen(port, () => {
 })
 ```
 
-### Terminal based Chatbot 🔥
+### Terminal Chatbot 😎
 ```javascript
 
 var readline = require('readline');
