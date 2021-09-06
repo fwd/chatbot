@@ -10,50 +10,6 @@
 npm i formsend/chatbot
 ``` 
 
-## Simple Example
-
-```js
-
-const ChatBot = require('@formsend/chatbot')
-
-;(async () => {
-
-	var answers = [
-
-		{
-			name: "Cookie",
-			confirmation: "Do you want a cookie?",
-			triggers: [ "cookie" ],
-			fields: [
-				{
-					label: "What flavor?",
-					name: "flavor"
-				},
-			],
-			action: async (fields) => {
-				return `🍪`
-			}
-		},
-
-	]
-
-	/**
-	* @param context [string] unique id for that context
-	* @param message [string] ongoing conversation message
-	* @param answers [object] array of possible answers
-	* @param configuaration [object] array of possible answers
-	*/
-
-	console.log( await ChatBot('uniqueId', 'Cookie', answers) )
-
-	console.log( await ChatBot('uniqueId', 'Yes', answers) )
-
-	console.log( await ChatBot('uniqueId', 'Chocolate', answers) )
-
-})()
-
-```
-
 ## Express Example
 ```javascript
 const ChatBot = require('@formsend/chatbot')
