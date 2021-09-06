@@ -154,7 +154,7 @@ module.exports = (id, message, capabilities, config) => {
             _question = _question.find(b => b.label == question.label && b.name == question.name)
         }
 
-        if (_question.type) {
+        if (_question && _question.type) {
             if (_question.type == 'email' && !validEmail(message)) {
                 resolve("Answer must be valid email.")
                 return
@@ -169,7 +169,7 @@ module.exports = (id, message, capabilities, config) => {
             }
         }
 
-        if (_question.validate) {
+        if (_question && _question.validate) {
             var answer = await _question.validate(message)
             if (answer !== true) {
                 var response = Array.isArray(answer) ? _.sample(answer) : answer
@@ -178,7 +178,7 @@ module.exports = (id, message, capabilities, config) => {
             }
         }
 
-        if (_question.format) message = _question.format(message)
+        if (_question && _question.format) message = _question.format(message)
 
         if (question) {
             answerQuestion(id, question, message)
