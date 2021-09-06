@@ -145,9 +145,14 @@ module.exports = (id, message, capabilities, config) => {
         }
 
         var question = unansweredQuestions(id)
+        
         var _question = capabilities.find(a => {
                 return a.fields.find(b => b.label == question.label && b.name == question.name)
-              }).fields.find(b => b.label == question.label && b.name == question.name)
+              })
+        
+        if (_question) {
+            _question = _question.find(b => b.label == question.label && b.name == question.name)
+        }
 
         if (_question.type) {
             if (_question.type == 'email' && !validEmail(message)) {
