@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const cache = require('@fwd/cache')
 
-const greetings = [ 'Hello', 'How can I help?', 'Yo', "What's Up?", 'Sup', 'How can I be of assistance?' ]
+const greetings = [ 'Hello', 'How can I help?', 'Yo', "What's up", 'Sup', 'How can I be of assistance?' ]
 const confirmations = [ 'Done.', 'Confirmed.', 'Consider it done.', 'Finished.' ]
 const thanks = [ "Np", "You're very welcome.", "All good.", "You're welcomed.", "Got chu, fam.", "Don't mention it." ]
 const oks = [ "Ok", "Np", "Aight", "Sure" ]
@@ -147,8 +147,8 @@ module.exports = (id, message, capabilities, config) => {
         var question = unansweredQuestions(id)
         
         var _question = capabilities.find(a => {
-                return a.fields.find(b => b.label == question.label && b.name == question.name)
-              })
+            return a.fields && a.fields.find(b => b.label == question.label && b.name == question.name)
+        })
         
         if (_question) {
             _question = _question.find(b => b.label == question.label && b.name == question.name)
