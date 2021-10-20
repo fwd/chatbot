@@ -150,7 +150,7 @@ module.exports = (id, message, capabilities, config) => {
             return a.fields && a.fields.find(b => b.label == question.label && b.name == question.name)
         })
         
-        if (_question) {
+        if (_question && Array.isArray(_question)) {
             _question = _question.find(b => b.label == question.label && b.name == question.name)
         }
 
