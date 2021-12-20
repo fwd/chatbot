@@ -116,7 +116,7 @@ module.exports = (id, message, capabilities, config) => {
         // if not, find a matching feature
         if (!conversation) {
             conversation = JSON.parse(JSON.stringify(capabilities)).find(a => {
-                return a.triggers.includes(message.toLowerCase()) || a.triggers.some(b => similarity(b, message.toLowerCase()) > 0.5)
+                return a.triggers.includes(message.toLowerCase()) || a.triggers.some(b => similarity(b, message.toLowerCase()) > 1)
             })
         }
 
