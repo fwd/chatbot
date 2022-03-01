@@ -129,7 +129,7 @@ module.exports = (id, message, capabilities, config) => {
         }
         
         // if yes, ask user if that's what they want to do
-        if (!conversation.confirmed && !agreed(message) && message.confirmation !== false) {
+        if (message.confirmation !== false && !conversation.confirmed && !agreed(message)) {
             cache(id, conversation)
             if (Array.isArray(conversation.confirmation)) conversation.confirmation = _.sample(conversation.confirmation)
             resolve(conversation.confirmation || `Are you sure you want to run ${conversation.name}`)
