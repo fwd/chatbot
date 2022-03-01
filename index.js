@@ -69,6 +69,8 @@ function unansweredQuestions(id, message) {
 
     if (!conversation || !conversation.fields || !conversation.fields.length) return false
 
+    if (!conversation.fields) return false
+
     var unanswered = conversation.fields.filter(a => !a.value)
 
     if (!unanswered[0]) return false
@@ -127,7 +129,7 @@ module.exports = (id, message, capabilities, config) => {
         }
         
         // if yes, ask user if that's what they want to do
-        if (!conversation.confirmed && !agreed(message)) {
+        if (!conversation.confirmed && !agreed(message) && message.confirmation !== false) {
             cache(id, conversation)
             if (Array.isArray(conversation.confirmation)) conversation.confirmation = _.sample(conversation.confirmation)
             resolve(conversation.confirmation || `Are you sure you want to run ${conversation.name}`)
