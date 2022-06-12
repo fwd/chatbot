@@ -1,18 +1,16 @@
-![Cover](https://raw.githubusercontent.com/formsend/chatbot/master/.github/hero.png)
+![Cover](https://raw.githubusercontent.com/fwd/chatbot/master/.github/hero.png)
 
-> Open Source Chatbot Framework for NodeJS, configurable with JSON.
-
-#### This package is in active development by the team at [Formsend](https://formsend.org). It will form the backbone of an upcoming feature. API will probably change in the future. Pull Requests and Feature Requests are welcomed.
+> Modular NodeJS Chatbot Framework
 
 ## Install
 
 ```sh
-npm i formsend/chatbot
+npm i @fwd/chatbot
 ``` 
 
 ## Express Example
 ```javascript
-const ChatBot = require('@formsend/chatbot')
+const ChatBot = require('@fwd/chatbot')
 const express = require('express')
 const app = express()
 const port = 3000
@@ -46,8 +44,9 @@ app.listen(port, () => {
 ```
 
 ### Terminal Chatbot 😎
+
 ```javascript
-const ChatBot = require('@formsend/chatbot')
+const ChatBot = require('@fwd/chatbot')
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -85,42 +84,17 @@ var recursiveAsyncReadLine = function () {
 recursiveAsyncReadLine();
 ```
 
-## 👤 Author
+## ❯ Contributing
 
-**Formsend**
+Give a ⭐️ if this project helped you!
 
-> Formsend is an alternative to Google Forms and Formspree. Easily create online forms with a form builder, and/or add a widget to your website in seconds. Built for simplicity, privacy & reliability.
+Contributions, issues and feature requests are welcome at [issues page](https://github.com/fwd/chatbot/issues).
 
-* Github: [@formsend](https://github.com/formsend)
-* Website: [https://formsend.org](https://formsend.org)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome! Feel free to check [issues page](https://github.com/formsend/chatbot/issues).
-
-## ♥️ Donate 
-
-We accept Crypto donations at the following addresses: 
-
-```
-# Nano
-nano_3gf57qk4agze3ozwfhe8w6oap3jmdb4ofe9qo1ra3wcs5jc888rwyt61ymea
-
-# Bitcoin
-bc1qcgvew2a7ta3f7xy5999tdwyd8clrvdtpe2uvj5
-
-# Doge
-D9U1FLygkMydx3DE2sXgnuFpHm7ePm3Zwe
-
-# Ethereum
-0xdD4691Dc9562FB262e4b2076bE255303243f271d
-```
-
-## 📝 License
+## ❯ License
 
 MIT License
 
-Copyright © 2021 [Forward Miami](https://forward.miami).
+Copyright © [@nano2dev](https://twitter.com/nano2dev).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -139,3 +113,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## ❯ Stargazers
+
+[![Stargazers over time](https://starchart.cc/fwd/n2.svg)](https://github.com/fwd/n2)
