@@ -1,9 +1,9 @@
 {
-  "name": "@formsend/chatbot",
+  "name": "@fwd/chatbot",
   "version": "1.0.0",
-  "description": "JSON configurable Chatbot Framework for NodeJS.",
+  "description": "Modular Chatbot Framework for NodeJS",
   "main": "index.js",
-  "author": "Forward Miami <hello@forward.miami>",
+  "author": "@nano2dev <hello@fwd.dev>",
   "license": "MIT",
   "homepage": "https://github.com/formsend/chatbot",
   "repository": {
