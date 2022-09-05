@@ -10,7 +10,7 @@ npm i @fwd/chatbot
 
 ## Express Example
 ```javascript
-const ChatBot = require('@fwd/chatbot')
+const chatbot = require('@fwd/chatbot')
 const express = require('express')
 const app = express()
 const port = 3000
@@ -35,7 +35,7 @@ var answers = [
 
 app.get('/', async (req, res) => {
 	if (!req.query.message) return res.send("Message is required.")
-	res.send( await ChatBot('contextId', req.query.message, answers) )
+	res.send( await chatbot('contextId', req.query.message, answers) )
 })
 
 app.listen(port, () => {
@@ -46,7 +46,7 @@ app.listen(port, () => {
 ### Terminal Chatbot 😎
 
 ```javascript
-const ChatBot = require('@fwd/chatbot')
+const chatbot = require('@fwd/chatbot')
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -76,7 +76,7 @@ var recursiveAsyncReadLine = function () {
   rl.question('> ', async (answer) => {
     if (answer == 'exit') return rl.close()
     if (answer == 'clear') return console.clear()
-    console.log( await ChatBot('jenkins', answer, answers) )
+    console.log( await chatbot('jenkins', answer, answers) )
     recursiveAsyncReadLine();
   });
 };
